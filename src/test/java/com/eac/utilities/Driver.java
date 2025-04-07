@@ -1,6 +1,6 @@
-package com.cydeo.utilities;
+package com.eac.utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -38,21 +38,21 @@ public class Driver {
          */
         switch(browserType){
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+//                WebDriverManager.chromedriver().setup();
                 driverPool.set(new ChromeDriver());
                 driverPool.get().manage().window().maximize();
                 driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 break;
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
+//                WebDriverManager.firefoxdriver().setup();
                 driverPool.set(new FirefoxDriver());
                 driverPool.get().manage().window().maximize();
                 driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 break;
             case "headless-chrome":
-                WebDriverManager.chromedriver().setup();
+//                WebDriverManager.chromedriver().setup();
                 ChromeOptions option = new ChromeOptions();
-                option.setHeadless(true);
+//                option.setHeadless(true);
                 driverPool.set(new ChromeDriver(option));
                 driverPool.get().manage().window().maximize();
                 driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
